@@ -1,4 +1,5 @@
 # Bots
+https://bots.botframework.com/
 
 ## History
 - 1960: ELIZA
@@ -15,3 +16,8 @@
   * Utilities and social capacities
   * Continuous relationship with the user
   * Manage system functions
+
+## Design
+- Inclusive design
+- UX (Avatar)
+- Character with personality
