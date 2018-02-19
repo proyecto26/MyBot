@@ -21,3 +21,6 @@ https://bots.botframework.com/
 - Inclusive design
 - UX (Avatar)
 - Character with personality
+- Define the devices and channels to support (Cortana, Email, Facebook, etc)
+- Form flow (conversation follow-up)
+- Prevent redirections
