@@ -65,6 +65,7 @@ SKDs for .NET, NodeJS or using only REST APIs.
 ## Bot Builder SDK 
 Integrate external services and Manage the conversation using LUIS system - Language Understanding Intelligent Service.
 
+
 # Microsoft Cognitive Services
 Set of APIs to create smart applications.
 
@@ -75,12 +76,14 @@ Image-processing algorithms to smartly identify, caption and moderate your pictu
 - Content Moderator
 - Face
 - Video
+
 ## Speech
 Convert spoken audio into text, use voice for verification, or add speaker recognition to your app.
 - Custom Speech Service (CRIS)
 - Speaker Recognition
 - Speech
 - Translator
+
 ## Language
 Allow your apps to process natural language with pre-built scripts, evaluate sentiment and learn how to recognize what users want.
 - Bing Spell Check
@@ -88,6 +91,7 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 - Linguistic Analysis
 - Text Analytics
 - Web Language Model
+
 ## Knowledge
 Map complex information and data in order to solve tasks such as intelligent recommendations and semantic search.
 - Academic Knowledge
@@ -95,6 +99,7 @@ Map complex information and data in order to solve tasks such as intelligent rec
 - Knowledge Exploration
 - Recommendations
 - QnA Maker
+
 ## Search
 Add Bing Search APIs to your apps and harness the ability to comb billions of webpages, images, videos, and news with a single API call.
 - Bing Autosuggest
@@ -102,3 +107,7 @@ Add Bing Search APIs to your apps and harness the ability to comb billions of we
 - Bing News Search
 - Bing Video Search
 - Bing Web Search
+
+
+# [QnA Maker](https://qnamaker.ai/)
+A free and easy-to-use REST API based on artificial intelligence to respond to users' questions in a natural way through an optimized learning logic (Machine Learning). It is a question and answer service with a graphical interface that allows it to be easy to administer.
