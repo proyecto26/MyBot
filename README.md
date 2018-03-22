@@ -115,17 +115,9 @@ Nuget package:
 # [QnA Maker](https://qnamaker.ai/)
 A free and easy-to-use REST API based on artificial intelligence to respond to users' questions in a natural way through an optimized learning logic (Machine Learning). It is a question and answer service with a graphical interface that allows it to be easy to administer.
 
-## QnA Maker Dialog
-Personalization in the response to the user according to the reliability control.
 
-```csharp
-[Serializable]
-[QnAMaker("subscriptionKey", "knowledgeId", "standard phrase when it doesn't satisfy the minimum response reliability index", 0.5, 1)]
-public class QnADialogWithActiveLearning : QnAMakerDialog {
-}
-```
-
-## Test the responses
+<details>
+ <summary>Example</summary>
 
 ```csharp
 [Serializable]
@@ -171,5 +163,16 @@ public class QnADialog : QnAMakerDialog {
 
     return await context.PostAsync(response);
   }
+}
+```
+</details>
+
+## QnA Maker Dialog
+Personalization in the response to the user according to the reliability control.
+
+```csharp
+[Serializable]
+[QnAMaker("subscriptionKey", "knowledgeId", "standard phrase when it doesn't satisfy the minimum response reliability index", 0.5, 1)]
+public class QnADialogWithActiveLearning : QnAMakerDialog {
 }
 ```
