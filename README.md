@@ -45,6 +45,9 @@ List the functions offered by the bot and describe a step by step for its execut
 - Form flow (conversation follow-up, validate the data)
 - Prevent redirections
 
+## Lifecycle
+
+![Bot Lifecycle](img/bot_lifecycle.png)
 
 # Bot Framework
 Open Source Framework to create and connect bots (Cross channel, AI and Up-to-Date resources).
