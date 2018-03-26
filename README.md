@@ -1,7 +1,8 @@
 # Bots
 
-## Bot Framework + Localization + Express + Swagger
-https://github.com/proyecto26/Bot-Framework/tree/master/src/nodejs 
+## Templates
+
+- [NodeJS(Express) + Swagger + Localization](src/nodejs) 
 
 ## History
 - 1960: ELIZA
