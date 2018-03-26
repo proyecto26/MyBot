@@ -1,9 +1,9 @@
 {
-  "name": "nodejs",
-  "version": "0.0.0",
+  "name": "mybot",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js"
   },
   "dependencies": {
     "botbuilder": "^3.13.1",
