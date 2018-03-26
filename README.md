@@ -2,7 +2,7 @@
 
 ## Templates
 
-- [Bot Framework + NodeJS(Express) + Swagger + Localization](src/nodejs) 
+- [NodeJS(Express) + Swagger + Localization](src/nodejs) 
 
 ## History
 - 1960: ELIZA
