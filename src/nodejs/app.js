@@ -1,57 +1,56 @@
-/*-----------------------------------------------------------------------------
-A simple echo bot for the Microsoft Bot Framework. 
------------------------------------------------------------------------------*/
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
+const app = express();
 
-var restify = require('restify');
-var builder = require('botbuilder');
-var botbuilder_azure = require("botbuilder-azure");
+/**
+ * Express routes
+ */
+const index = require('./routes/index');
+const users = require('./routes/users');
 
-// Setup Restify Server
-var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
-   console.log('%s listening to %s', server.name, server.url); 
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+// static folder for assets
+// app.use(express.static(path.join(__dirname, 'public')));
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+app.use('/', index);
+app.use('/api/help', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/users', users);
+
+/**
+ * Initialize the Bot - localhost:3978 by default
+ */
+const bot = require('./bot');
+bot.initialize(app);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  let err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
-  
-// Create chat connector for communicating with the Bot Framework Service
-var connector = new builder.ChatConnector({
-    appId: process.env.MicrosoftAppId,
-    appPassword: process.env.MicrosoftAppPassword,
-    openIdMetadata: process.env.BotOpenIdMetadata 
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
-// Listen for messages from users 
-server.post('/api/messages', connector.listen());
-
-/*----------------------------------------------------------------------------------------
-* Bot Storage: This is a great spot to register the private state storage for your bot. 
-* We provide adapters for Azure Table, CosmosDb, SQL Azure, or you can implement your own!
-* For samples and documentation, see: https://github.com/Microsoft/BotBuilder-Azure
-* ---------------------------------------------------------------------------------------- */
-
-var tableName = 'botdata';
-var azureTableClient = new botbuilder_azure.AzureTableClient(tableName, process.env['AzureWebJobsStorage']);
-var tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azureTableClient);
-
-// Create your bot with a function to receive messages from the user
-var bot = new builder.UniversalBot(connector);
-bot.set('storage', tableStorage);
-
-bot.dialog('/', [
-    function (session) {
-        builder.Prompts.text(session, "Hello human, What's your name?");
-    },
-    function (session, results) {
-        session.userData.name = results.response;
-        builder.Prompts.number(session, "Hi " + results.response + ", How many years have you been coding?"); 
-    },
-    function (session, results) {
-        session.userData.coding = results.response;
-        builder.Prompts.choice(session, "What language do you code Node using?", ["JavaScript", "CoffeeScript", "TypeScript"]);
-    },
-    function (session, results) {
-        session.userData.language = results.response.entity;
-        session.send("Got it... " + session.userData.name + 
-                    " you've been programming for " + session.userData.coding + 
-                    " years and use " + session.userData.language + ".");
-    }
-]);
+module.exports = app;

@@ -1,0 +1,8 @@
+{
+  "greeting": "Bienvenido!",
+  "instructions": "Este demo es un template para crear tus propios bots!",
+  "request_name": "Hola humano, cuál es tu nombre?",
+  "years_coding": "Cuántos años has estado codificando?",
+  "preferred_language": "Cuál es tú lenguaje preferido?",
+  "programming_years_lang": "Ok %s, tú has estado programando por %s años y usando %s"
+}

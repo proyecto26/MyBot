@@ -1,0 +1,5 @@
+{
+    "MicrosoftAppId": "c6831a49-9de5-445c-8d69-7d36ade8b1b2",
+    "MicrosoftAppPassword" : "IH7*k$OjX5rV1i9l",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=bot26storage;AccountKey=jpETR5jiFA3ZiNclK38/uckpK00zsFW+VJvWHU7gNyYp0bKppL7hUKjzsJlYmJVfhFSwaWy8ZF6RnVkJeYbNkQ==;"
+}
