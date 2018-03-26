@@ -183,3 +183,17 @@ Personalization in the response to the user according to the reliability control
 public class QnADialogWithActiveLearning : QnAMakerDialog {
 }
 ```
+
+## Collaborators 🥇
+[<img alt="jdnichollsc" src="https://avatars3.githubusercontent.com/u/2154886?v=3&s=117" width="117">](https://github.com/jdnichollsc) |
+:---: |
+[Juan Nicholls](mailto:jdnichollsc@hotmail.com) |
+
+## Supporting 🍻
+I believe in Unicorns 🦄
+Support [me](http://www.paypal.me/jdnichollsc/2), if you do too.
+
+## Happy coding 💯
+Made with ❤️
+
+<img width="150px" src="http://phaser.azurewebsites.net/assets/nicholls.png" align="right">
