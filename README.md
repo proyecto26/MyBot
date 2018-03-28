@@ -201,6 +201,9 @@ public class QnADialogWithActiveLearning : QnAMakerDialog
 :---: |
 [Juan Nicholls](mailto:jdnichollsc@hotmail.com) |
 
+## Credits 👍
+- **[TI Capacitación](https://ticapacitacion.com)**
+
 ## Supporting 🍻
 I believe in Unicorns 🦄
 Support [me](http://www.paypal.me/jdnichollsc/2), if you do too.
