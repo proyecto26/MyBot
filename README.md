@@ -4,6 +4,15 @@
 
 - [NodeJS(Express) + Swagger + Localization](src/nodejs) ![Bot NodeJS](img/bot_nodejs.png)
 
+## Demo
+Do you want to see this template in action? Download the code and the following tools:
+- [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator)
+- [ngrok](https://ngrok.com/download) (Required to connect to a bot hosted remotely)
+
+More examples with **NodeJS**:
+- [BotBuilder](https://github.com/Microsoft/BotBuilder/tree/master/Node/examples)
+- [BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node)
+
 ## History
 - 1960: ELIZA
 - 1970: PARRY
@@ -67,9 +76,7 @@ The **Bot Connector** can connect with the intelligence services and implement o
 - Telemetry. Information about the service is collected, such as the number of requests, messages that have failed, etc.
 
 ## Bot Developer SDKs 
-SKDs for .NET, NodeJS or using only REST APIs.
-
-## Bot Builder SDK 
+SKDs for .NET, NodeJS or using REST APIs.
 Integrate external services and Manage the conversation using LUIS system - Language Understanding Intelligent Service.
 
 
@@ -116,8 +123,8 @@ Add Bing Search APIs to your apps and harness the ability to comb billions of we
 - Bing Web Search
 
 ## Installation
-Nuget package:
->Microsoft.Bot.Builder.CognitiveServices
+- NodeJS via npm: `https://www.npmjs.com/package/botbuilder`
+- .NET via Nuget package: `Microsoft.Bot.Builder`
 
 # [QnA Maker](https://qnamaker.ai/)
 A free and easy-to-use REST API based on artificial intelligence to respond to users' questions in a natural way through an optimized learning logic (Machine Learning). It is a question and answer service with a graphical interface that allows it to be easy to administer.
@@ -174,13 +181,18 @@ public class QnADialog : QnAMakerDialog {
 ```
 </details>
 
+## Installation
+- NodeJS via npm: `https://www.npmjs.com/package/botbuilder-cognitiveservices`
+- .NET via Nuget package: `Microsoft.Bot.Builder.CognitiveServices`
+
 ## QnA Maker Dialog
 Personalization in the response to the user according to the reliability control.
 
 ```csharp
 [Serializable]
 [QnAMaker("subscriptionKey", "knowledgeId", "standard phrase when it doesn't satisfy the minimum response reliability index", 0.5, 1)]
-public class QnADialogWithActiveLearning : QnAMakerDialog {
+public class QnADialogWithActiveLearning : QnAMakerDialog 
+{
 }
 ```
 
