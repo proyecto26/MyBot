@@ -123,7 +123,7 @@ Add Bing Search APIs to your apps and harness the ability to comb billions of we
 - Bing Web Search
 
 ## Installation
-- NodeJS via npm: `https://www.npmjs.com/package/botbuilder`
+- NodeJS via npm: `botbuilder`
 - .NET via Nuget package: `Microsoft.Bot.Builder`
 
 # [QnA Maker](https://qnamaker.ai/)
@@ -182,7 +182,7 @@ public class QnADialog : QnAMakerDialog {
 </details>
 
 ## Installation
-- NodeJS via npm: `https://www.npmjs.com/package/botbuilder-cognitiveservices`
+- NodeJS via npm: `botbuilder-cognitiveservices`
 - .NET via Nuget package: `Microsoft.Bot.Builder.CognitiveServices`
 
 ## QnA Maker Dialog

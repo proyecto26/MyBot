@@ -8,6 +8,7 @@ const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 const app = express();
+app.set('view engine', 'html');
 
 /**
  * Express routes

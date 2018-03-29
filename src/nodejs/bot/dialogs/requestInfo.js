@@ -1,7 +1,6 @@
-const helloDialog = (builder, bot) => {
-  bot.dialog('/helloDialog', [
+const requestInfo = (builder, bot) => {
+  bot.dialog('/requestInfo', [
     (session) => {
-      console.log(`locale: ${session.message.textLocale}`)
       builder.Prompts.text(session, "request_name");
     },
     (session, results) => {
@@ -20,11 +19,11 @@ const helloDialog = (builder, bot) => {
       const name = userData.name;
       const locale = session.preferredLocale();
       const localizer = session.localizer;
-      session.send('programming_years_lang', name, userData.coding, userData.language)
+      session.endDialog('programming_years_lang', name, userData.coding, userData.language);
     }
   ]);
 }
 
 module.exports = {
-  init: helloDialog
+  init: requestInfo
 }

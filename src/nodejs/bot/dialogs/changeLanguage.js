@@ -1,5 +1,5 @@
-const localePicker = (builder, bot) => {
-  bot.dialog('/localePicker', [
+const changeLanguage = (builder, bot) => {
+  bot.dialog('/changeLanguage', [
     (session) => {
       // Prompt the user to select their preferred locale
       builder.Prompts.choice(session, "preferred_language", 'English|Español');
@@ -17,9 +17,9 @@ const localePicker = (builder, bot) => {
       session.preferredLocale(locale, (err) => {
         if (!err) {
           // Locale files loaded
-          session.endDialog();
+          session.endDialog('language_selected', results.response.entity);
         } else {
-          // Problem loading the selected locale
+          // Error loading the language
           session.error(err);
         }
       });
@@ -28,5 +28,5 @@ const localePicker = (builder, bot) => {
 };
 
 module.exports = {
-  init: localePicker
+  init: changeLanguage
 }
