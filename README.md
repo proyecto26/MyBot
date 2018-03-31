@@ -75,9 +75,9 @@ The **Bot Connector** can connect with the intelligence services and implement o
 - Translate services.
 - Telemetry. Information about the service is collected, such as the number of requests, messages that have failed, etc.
 
-## Bot Developer SDKs 
-SKDs for .NET, NodeJS or using REST APIs.
-Integrate external services and Manage the conversation using LUIS system - Language Understanding Intelligent Service.
+## Bot Builder
+SDKs for .NET, NodeJS or we can use REST APIs to create and debug bots. It also includes the **Bot Framework Emulator** to test our bots and the Channel Inspector to preview the user experience of our bot on different channels.
+Integrate external services and Manage the conversation using LUIS (Language Understanding Intelligent Service). 
 
 
 # Microsoft Cognitive Services
@@ -131,7 +131,7 @@ A free and easy-to-use REST API based on artificial intelligence to respond to u
 
 
 <details>
- <summary>Example</summary>
+ <summary>.NET Example</summary>
 
 ```csharp
 [Serializable]
@@ -195,6 +195,21 @@ public class QnADialogWithActiveLearning : QnAMakerDialog
 {
 }
 ```
+
+# Channels
+A channel is a connection between Bot Framework and communication applications.
+
+## Publish
+- **Skype:**
+> A Skype account is required, we can deploy bots to test.
+- **Microsoft Teams:**
+> An office 365 account is required. We need to enable the permissions to use external apps from the administration panel of Office 365 (Configuration/Services...).
+- **Telegram:**
+> A Telegram account is required. **BotFather** is an app that we need to install to create and manage our bots, check [here](https://telegram.me/botfather).
+- **Web Chat:**
+> It's inserted using a HTML Iframe.
+- **Slack:**
+> It's required to create an app from Slack API, add a new Redirect URL to https://slack.botframework.com and enter the credentials.
 
 ## Collaborators 🥇
 [<img alt="jdnichollsc" src="https://avatars3.githubusercontent.com/u/2154886?v=3&s=117" width="117">](https://github.com/jdnichollsc) |

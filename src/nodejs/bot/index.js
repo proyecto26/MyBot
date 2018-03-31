@@ -74,7 +74,7 @@ const _initialize = (server) => {
       const option = _.find(menu, { value: results.response.entity })
       switch (option.key) {
         case 'request_info':
-        session.beginDialog('/requestInfo');
+          session.beginDialog('/requestInfo');
           break;
         case 'change_language':
           session.beginDialog('/changeLanguage');
