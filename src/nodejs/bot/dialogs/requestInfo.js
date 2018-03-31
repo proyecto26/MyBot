@@ -17,9 +17,8 @@ const requestInfo = (builder, bot) => {
       const userData = session.userData
       userData.language = results.response.entity;
       const name = userData.name;
-      const locale = session.preferredLocale();
-      const localizer = session.localizer;
-      session.endDialog('programming_years_lang', name, userData.coding, userData.language);
+      const message = session.gettext('programming_years_lang', name, userData.coding, userData.language)
+      session.endDialog(message);
     }
   ]);
 }
