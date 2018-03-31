@@ -110,6 +110,14 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 - [Plan your LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/plan-your-app)
 - [Use prebuilt domains in LUIS apps](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-use-prebuilt-domains)
 - [Create your first LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-get-started-create-app)
+- [Manage intents](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/add-intents)
+- [Add utterances](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/add-example-utterances)
+- [Entities in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-concept-entity-types) and [Prebuilt entities](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/pre-builtentities)
+- [Manage entities](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/add-entities)
+- [Improve prediction accuracy using features](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/add-features)
+- [Test your LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/train-test)
+- [Use active learning](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/label-suggested-utterances)
+- [Publish your trained app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/publishapp)
 
 ## Knowledge
 Map complex information and data in order to solve tasks such as intelligent recommendations and semantic search.
