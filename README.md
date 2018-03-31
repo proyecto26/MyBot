@@ -106,6 +106,11 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 - Text Analytics
 - Web Language Model
 
+### To Do
+- [Plan your LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/plan-your-app)
+- [Use prebuilt domains in LUIS apps](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-use-prebuilt-domains)
+- [Create your first LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-get-started-create-app)
+
 ## Knowledge
 Map complex information and data in order to solve tasks such as intelligent recommendations and semantic search.
 - Academic Knowledge

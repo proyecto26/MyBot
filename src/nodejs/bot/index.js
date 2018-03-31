@@ -38,21 +38,18 @@ const _initialize = (server) => {
   // Listen for messages from users 
   server.post('/api/messages', connector.listen());
 
-  let langSelected = false;
   let menu = []
 
   // Create your bot with a function to receive messages from the user
   const bot = new builder.UniversalBot(connector, [
     (session, args, next) => {
-      if(langSelected || 
-        session.preferredLocale()) {
+      if(session.preferredLocale()) {
         next()
       }
       else {
         session.send('greeting');
         session.send('instructions');
         session.beginDialog('/changeLanguage');
-        langSelected = true;
       }
     },
     (session) => {
@@ -70,7 +67,7 @@ const _initialize = (server) => {
 
       builder.Prompts.choice(session, 'select_demo', options, { listStyle: 3 });
     },
-    (session, results) => {
+    (session, results, next) => {
       const option = _.find(menu, { value: results.response.entity })
       switch (option.key) {
         case 'request_info':
@@ -78,6 +75,10 @@ const _initialize = (server) => {
           break;
         case 'change_language':
           session.beginDialog('/changeLanguage');
+          break;
+        default:
+          session.send('must_select_option');
+          session.reset();
           break;
       }
     }

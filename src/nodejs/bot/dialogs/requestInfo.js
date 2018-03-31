@@ -1,5 +1,5 @@
 const requestInfo = (builder, bot) => {
-  bot.dialog('/requestInfo', [
+  return bot.dialog('/requestInfo', [
     (session) => {
       builder.Prompts.text(session, "request_name");
     },

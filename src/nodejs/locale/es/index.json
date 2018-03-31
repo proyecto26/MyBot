@@ -8,5 +8,6 @@
   "programming_years_lang": "Ok %s, tú has estado programando por %s años y usando %s",
   "change_language": "Cambiar lenguaje",
   "request_info": "Solicitar info",
-  "language_selected": "Su idioma preferido es ahora %s"
+  "language_selected": "Su idioma preferido es ahora %s",
+  "must_select_option": "Debe seleccionar una opción"
 }

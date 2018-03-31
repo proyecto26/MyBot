@@ -1,5 +1,5 @@
 const changeLanguage = (builder, bot) => {
-  bot.dialog('/changeLanguage', [
+  return bot.dialog('/changeLanguage', [
     (session) => {
       // Prompt the user to select their preferred locale
       builder.Prompts.choice(session, "preferred_language", 'English|Español');
