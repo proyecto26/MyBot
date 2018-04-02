@@ -9,5 +9,16 @@
   "change_language": "Change lenguage",
   "request_info": "Request info",
   "language_selected": "Your preferred language is now %s",
-  "must_select_option": "You must select an option"
+  "must_select_option": "You must select an option",
+  "language_processing": "Language processing",
+  "greetings": [
+    "Hi there!",
+    "Hey human!",
+    "Hi human!",
+    "No time to explain, give me your money!",
+    "Oh shit... Ok. Now tell me you're bored, and ask what's up.",
+    "Luke, I am Your Father!!"
+  ],
+  "enable_luis": "Enable LUIS",
+  "luis_enabled": "LUIS enabled, you can say hi! (exit to disable)"
 }

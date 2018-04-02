@@ -1,19 +1,20 @@
+const _ = require('lodash');
+
 const changeLanguage = (builder, bot) => {
+
+  const languagesSupported = [
+    { key: 'en', value: 'English' },
+    { key: 'es', value: 'Español' }
+  ];
+
   return bot.dialog('/changeLanguage', [
     (session) => {
       // Prompt the user to select their preferred locale
-      builder.Prompts.choice(session, "preferred_language", 'English|Español');
+      builder.Prompts.choice(session, "preferred_language", _.map(languagesSupported, 'value'));
     },
     (session, results) => {
-      var locale;
-      switch (results.response.entity) {
-        case 'English':
-          locale = 'en';
-          break;
-        case 'Español':
-          locale = 'es';
-          break;
-      }
+      const language = _.find(languagesSupported, { value: results.response.entity });
+      const locale = language && language.key;
       session.preferredLocale(locale, (err) => {
         if (!err) {
           // Locale files loaded

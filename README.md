@@ -77,7 +77,7 @@ The **Bot Connector** can connect with the intelligence services and implement o
 
 ## Bot Builder
 SDKs for .NET, NodeJS or we can use REST APIs to create and debug bots. It also includes the **Bot Framework Emulator** to test our bots and the Channel Inspector to preview the user experience of our bot on different channels.
-Integrate external services and Manage the conversation using LUIS (Language Understanding Intelligent Service). 
+Integrate external services and Manage the conversation using [LUIS](https://www.luis.ai/welcome) (Language Understanding Intelligent Service). 
 
 
 # Microsoft Cognitive Services
@@ -106,6 +106,12 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 - Text Analytics
 - Web Language Model
 
+### Videos
+
+* [Introduction to LUIS](https://aka.ms/luis-intro-video)
+* [Advanced learning with LUIS](https://www.youtube.com/watch?v=39L0Gv2EcSk)
+* [Channel 9 Deep Dive into LUIS and Chatbots](https://channel9.msdn.com/Blogs/MVP-Azure/Cognitive-Services-Episode-3-Deep-dive-into-LUIS-and-Chatbots)
+
 ### To Do
 - [Plan your LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/plan-your-app)
 - [Use prebuilt domains in LUIS apps](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-use-prebuilt-domains)
@@ -118,6 +124,7 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 - [Test your LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/train-test)
 - [Use active learning](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/label-suggested-utterances)
 - [Publish your trained app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/publishapp)
+- [LUIS Samples](https://github.com/Microsoft/LUIS-Samples)
 
 ## Knowledge
 Map complex information and data in order to solve tasks such as intelligent recommendations and semantic search.
@@ -223,6 +230,9 @@ A channel is a connection between Bot Framework and communication applications.
 > It's inserted using a HTML Iframe.
 - **Slack:**
 > It's required to create an app from Slack API, add a new Redirect URL to https://slack.botframework.com and enter the credentials.
+
+## Resources ⛩
+- [Microsoft labs for learning to develop AI-oriented applications](https://azure.github.io/LearnAI-Bootcamp/)
 
 ## Collaborators 🥇
 [<img alt="jdnichollsc" src="https://avatars3.githubusercontent.com/u/2154886?v=3&s=117" width="117">](https://github.com/jdnichollsc) |

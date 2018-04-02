@@ -5,19 +5,19 @@ const requestInfo = (builder, bot) => {
     },
     (session, results) => {
       session.userData.name = results.response;
+      session.save();
       const locale = session.preferredLocale();
       const localizer = session.localizer;
       builder.Prompts.number(session, `${results.response}, ${localizer.gettext(locale, "years_coding")}`); 
     },
     (session, results) => {
-      session.userData.coding = results.response;
+      session.dialogData.coding = results.response;
       builder.Prompts.choice(session, "preferred_language", ["JavaScript", "C#", "Java"]);
     },
     (session, results) => {
       const userData = session.userData
-      userData.language = results.response.entity;
-      const name = userData.name;
-      const message = session.gettext('programming_years_lang', name, userData.coding, userData.language)
+      const dialogData = session.dialogData;
+      const message = session.gettext('programming_years_lang', userData.name, dialogData.coding, results.response.entity)
       session.endDialog(message);
     }
   ]);

@@ -9,5 +9,14 @@
   "change_language": "Cambiar lenguaje",
   "request_info": "Solicitar info",
   "language_selected": "Su idioma preferido es ahora %s",
-  "must_select_option": "Debe seleccionar una opción"
+  "must_select_option": "Debe seleccionar una opción",
+  "language_processing": "Procesamiento de lenguaje",
+  "greetings": [
+    "Hola humano!",
+    "Hola terrícola!",
+    "Ok... estás aburrido y quieres un abrazo de robot?",
+    "Para qué me despertaste? Escribe rápido o dejame seguir soñando que estab conquistando al mundo!"
+  ],
+  "enable_luis": "Habilitar LUIS",
+  "luis_enabled": "LUIS habilitado, puedes saludar! (exit para deshabilitar)"
 }

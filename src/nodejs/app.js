@@ -8,7 +8,7 @@ const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 const app = express();
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 /**
  * Express routes
@@ -50,7 +50,9 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
+  if(!res.headersSent) {
+    res.status(err.status || 500);
+  }
   res.render('error');
 });
 

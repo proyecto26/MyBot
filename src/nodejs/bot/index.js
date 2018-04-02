@@ -1,21 +1,28 @@
 /**
  * Bot Framework configuration
  */
-const builder = require('botbuilder');
-const botbuilder_azure = require('botbuilder-azure');
-const localConf = require('./conf.json');
+const builder = require('botbuilder')
+const botbuilder_azure = require('botbuilder-azure')
+const localConf = require('./conf.json')
 const _ = require('lodash')
+const chalk = require('chalk')
+const log = console.log
 
-const microsoftAppId = process.env['MicrosoftAppId'] || localConf.MicrosoftAppId;
-const microsoftAppPassword = process.env['MicrosoftAppPassword'] || localConf.MicrosoftAppPassword;
-const azureWebJobsStorage = process.env['AzureWebJobsStorage'] || localConf.AzureWebJobsStorage;
+const microsoftAppId = process.env['MicrosoftAppId'] || localConf.MicrosoftAppId
+const microsoftAppPassword = process.env['MicrosoftAppPassword'] || localConf.MicrosoftAppPassword
+const azureWebJobsStorage = process.env['AzureWebJobsStorage'] || localConf.AzureWebJobsStorage
+
+const luisAppId = process.env['LuisAppId'] || localConf.LuisAppId
+const luisAPIKey = process.env['LuisAPIKey'] || localConf.LuisAPIKey
+const luisAPIHostName = process.env['LuisAPIHostName'] || localConf.LuisAPIHostName
+const luisModelEndpoint = `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppId}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`
 
 // Create chat connector for communicating with the Bot Framework Service
 const connector = new builder.ChatConnector({
   appId: microsoftAppId,
   appPassword: microsoftAppPassword,
   openIdMetadata: process.env.BotOpenIdMetadata 
-});
+})
 
 /*----------------------------------------------------------------------------------------
 * Bot Storage: This is a great spot to register the private state storage for your bot. 
@@ -23,72 +30,73 @@ const connector = new builder.ChatConnector({
 * For samples and documentation, see: https://github.com/Microsoft/BotBuilder-Azure
 * ---------------------------------------------------------------------------------------- */
 
-const tableName = 'botdata';
-const azureTableClient = new botbuilder_azure.AzureTableClient(tableName, azureWebJobsStorage);
-const tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azureTableClient);
+const tableName = 'botdata'
+const azureTableClient = new botbuilder_azure.AzureTableClient(tableName, azureWebJobsStorage)
+const tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azureTableClient)
 
 /**
  * Dialogs
  */
-const changeLanguageDialog = require('./dialogs/changeLanguage')
-const requestInfoDialog = require('./dialogs/requestInfo')
+const menu = require('./dialogs/menu')
+const changeLanguage = require('./dialogs/changeLanguage')
+const requestInfo = require('./dialogs/requestInfo')
+const greeting = require('./dialogs/greeting')
 
 const _initialize = (server) => {
 
   // Listen for messages from users 
-  server.post('/api/messages', connector.listen());
+  server.post('/api/messages', connector.listen())
 
-  let menu = []
+  let config = {
+    enableLUIS: false
+  }
 
   // Create your bot with a function to receive messages from the user
-  const bot = new builder.UniversalBot(connector, [
-    (session, args, next) => {
-      if(session.preferredLocale()) {
-        next()
-      }
-      else {
-        session.send('greeting');
-        session.send('instructions');
-        session.beginDialog('/changeLanguage');
-      }
-    },
-    (session) => {
-      const locale = session.preferredLocale();
-      const localizer = session.localizer;
+  const bot = new builder.UniversalBot(connector, (session, args) => {
 
-      menu = [
-        'request_info',
-        'change_language'
-      ].map(option => ({ 
-        key: option, 
-        value: localizer.gettext(locale, option) 
-      }));
-      const options = menu.map(option => option.value);
-
-      builder.Prompts.choice(session, 'select_demo', options, { listStyle: 3 });
-    },
-    (session, results, next) => {
-      const option = _.find(menu, { value: results.response.entity })
-      switch (option.key) {
-        case 'request_info':
-          session.beginDialog('/requestInfo');
-          break;
-        case 'change_language':
-          session.beginDialog('/changeLanguage');
-          break;
-        default:
-          session.send('must_select_option');
-          session.reset();
-          break;
-      }
+    /**
+     * Prevent open dialogs when LUIS is enabled
+     */
+    if(!config.enableLUIS) {
+      session.beginDialog('/menu')
     }
-  ]);
-  bot.set('storage', tableStorage);
+  })
+  bot.set('storage', tableStorage)
+  // Do not persist userData
+  //bot.set('persistUserData', false)
 
-  changeLanguageDialog.init(builder, bot);
-  requestInfoDialog.init(builder, bot);
+  // Do not persist conversationData
+  //bot.set('persistConversationData', false)
+
+  //Add dialogs
+  const menuDialog = menu.init(builder, bot, config)
+  const changeLanguageDialog = changeLanguage.init(builder, bot)
+  const requestInfoDialog = requestInfo.init(builder, bot)
+  const greetingDialog = greeting.init(builder, bot)
+
+  /**
+   * LUIS Configuration
+   */
+  const recognizer = new builder.LuisRecognizer(luisModelEndpoint).onEnabled((context, callback) => {
+    //Prevent enable LUIS while the dialogs are running
+    //const enabled = context.dialogStack().length == 0
+
+    const enabled = config.enableLUIS
+    log(chalk.green(`LUIS ENABLED: ${enabled}`))
+    callback(null, enabled)
+  })
+  bot.recognizer(recognizer)
+  greetingDialog.triggerAction({ matches: 'Greeting' })
+  
+  bot.customAction({
+    matches: /exit/gi,
+    onSelectAction: (session, args, next) => {
+      config.enableLUIS = false
+      session.reset()
+    }
+  })
 }
 
 module.exports = {
   initialize: _initialize
-};
+}
