@@ -66,7 +66,6 @@ const _initialize = (server) => {
   const menuDialog = dialogs.menu.init(builder, bot, config)
   const changeLanguageDialog = dialogs.changeLanguage.init(builder, bot)
   const requestInfoDialog = dialogs.requestInfo.init(builder, bot)
-  const greetingDialog = dialogs.greeting.init(builder, bot)
 
   /**
    * LUIS Configuration
@@ -80,11 +79,15 @@ const _initialize = (server) => {
     callback(null, enabled)
   })
   bot.recognizer(recognizer)
-  greetingDialog.triggerAction({ matches: 'Greeting' })
 
-  bot.dialog('/none', (session) => {
-    session.send('dont_understand_you')
-  }).triggerAction({ matches: 'None' })
+  bot.dialog('/greeting', (session) => session.send('greetings'))
+  .triggerAction({ matches: 'Greeting' })
+
+  bot.dialog('/leave', (session) => session.send('leave'))
+  .triggerAction({ matches: 'Leave' })
+
+  bot.dialog('/none', (session) => session.send('dont_understand_you'))
+  .triggerAction({ matches: 'None' })
   
   bot.customAction({
     matches: /exit/gi,

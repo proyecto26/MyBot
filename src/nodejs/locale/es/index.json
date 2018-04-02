@@ -15,7 +15,16 @@
     "Hola humano!",
     "Hola terrícola!",
     "Ok... estás aburrido y quieres un abrazo de robot?",
-    "Para qué me despertaste? Escribe rápido o dejame seguir soñando que estab conquistando al mundo!"
+    "Para qué me despertaste? Escribe rápido o déjame seguir soñando que estaba conquistando al mundo!"
+  ],
+  "leave": [
+    "No puedes escapar. Muajaja",
+    "Buena suerte!",
+    "Realmente te extrañaré",
+    "La mejor de las suertes!",
+    "Ten una vida próspera y mantente en contacto!",
+    "Adiós mi amigo humano",
+    "Actualmente estoy en una entrevista de trabajo de bots y le responderé si no logro obtener el puesto"
   ],
   "enable_luis": "Habilitar LUIS",
   "luis_enabled": "LUIS habilitado, puedes saludar! (exit para deshabilitar)",

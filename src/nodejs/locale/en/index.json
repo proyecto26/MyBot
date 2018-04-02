@@ -19,6 +19,18 @@
     "Oh shit... Ok. Now tell me you're bored, and ask what's up.",
     "Luke, I am Your Father!!"
   ],
+  "leave": [
+    "Good luck!",
+    "Can't escape me. Muahaha",
+    "I will really miss you!",
+    "Best of Luck!",
+    "Have a prosperous life and keep in touch!",
+    "It may be hard to say good bye. But the good with it is a promise of something better",
+    "Good luck in the future, and please stay in touch",
+    "Goodbye my human friend",
+    "I am currently out at a bot job interview and will reply to you if I fail to get the position",
+    "The bot server is unable to verify your server connection and is unable to deliver this message. Please restart your computer and try sending again"
+  ],
   "enable_luis": "Enable LUIS",
   "luis_enabled": "LUIS enabled, you can say hi! (exit to disable)",
   "dont_understand_you": "I don't understand you, what?"

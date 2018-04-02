@@ -233,6 +233,7 @@ A channel is a connection between Bot Framework and communication applications.
 
 ## Resources ⛩
 - [Microsoft labs for learning to develop AI-oriented applications](https://azure.github.io/LearnAI-Bootcamp/)
+- [Microsoft Bot Framework Resources](https://blogs.msdn.microsoft.com/smich/2016/09/30/microsoft-bot-framework-resources/)
 
 ## Collaborators 🥇
 [<img alt="jdnichollsc" src="https://avatars3.githubusercontent.com/u/2154886?v=3&s=117" width="117">](https://github.com/jdnichollsc) |
