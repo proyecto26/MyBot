@@ -18,5 +18,6 @@
     "Para qué me despertaste? Escribe rápido o dejame seguir soñando que estab conquistando al mundo!"
   ],
   "enable_luis": "Habilitar LUIS",
-  "luis_enabled": "LUIS habilitado, puedes saludar! (exit para deshabilitar)"
+  "luis_enabled": "LUIS habilitado, puedes saludar! (exit para deshabilitar)",
+  "dont_understand_you": "No te entiendo, qué?"
 }

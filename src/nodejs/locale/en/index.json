@@ -20,5 +20,6 @@
     "Luke, I am Your Father!!"
   ],
   "enable_luis": "Enable LUIS",
-  "luis_enabled": "LUIS enabled, you can say hi! (exit to disable)"
+  "luis_enabled": "LUIS enabled, you can say hi! (exit to disable)",
+  "dont_understand_you": "I don't understand you, what?"
 }

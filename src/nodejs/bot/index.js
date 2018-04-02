@@ -15,7 +15,7 @@ const azureWebJobsStorage = process.env['AzureWebJobsStorage'] || localConf.Azur
 const luisAppId = process.env['LuisAppId'] || localConf.LuisAppId
 const luisAPIKey = process.env['LuisAPIKey'] || localConf.LuisAPIKey
 const luisAPIHostName = process.env['LuisAPIHostName'] || localConf.LuisAPIHostName
-const luisModelEndpoint = `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppId}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`
+const LuisModelUrl = `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppId}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`
 
 // Create chat connector for communicating with the Bot Framework Service
 const connector = new builder.ChatConnector({
@@ -34,13 +34,7 @@ const tableName = 'botdata'
 const azureTableClient = new botbuilder_azure.AzureTableClient(tableName, azureWebJobsStorage)
 const tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azureTableClient)
 
-/**
- * Dialogs
- */
-const menu = require('./dialogs/menu')
-const changeLanguage = require('./dialogs/changeLanguage')
-const requestInfo = require('./dialogs/requestInfo')
-const greeting = require('./dialogs/greeting')
+const dialogs = require('require-all')(__dirname + '/dialogs')
 
 const _initialize = (server) => {
 
@@ -69,15 +63,15 @@ const _initialize = (server) => {
   //bot.set('persistConversationData', false)
 
   //Add dialogs
-  const menuDialog = menu.init(builder, bot, config)
-  const changeLanguageDialog = changeLanguage.init(builder, bot)
-  const requestInfoDialog = requestInfo.init(builder, bot)
-  const greetingDialog = greeting.init(builder, bot)
+  const menuDialog = dialogs.menu.init(builder, bot, config)
+  const changeLanguageDialog = dialogs.changeLanguage.init(builder, bot)
+  const requestInfoDialog = dialogs.requestInfo.init(builder, bot)
+  const greetingDialog = dialogs.greeting.init(builder, bot)
 
   /**
    * LUIS Configuration
    */
-  const recognizer = new builder.LuisRecognizer(luisModelEndpoint).onEnabled((context, callback) => {
+  const recognizer = new builder.LuisRecognizer(LuisModelUrl).onEnabled((context, callback) => {
     //Prevent enable LUIS while the dialogs are running
     //const enabled = context.dialogStack().length == 0
 
@@ -87,6 +81,10 @@ const _initialize = (server) => {
   })
   bot.recognizer(recognizer)
   greetingDialog.triggerAction({ matches: 'Greeting' })
+
+  bot.dialog('/none', (session) => {
+    session.send('dont_understand_you')
+  }).triggerAction({ matches: 'None' })
   
   bot.customAction({
     matches: /exit/gi,
