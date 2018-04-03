@@ -41,18 +41,13 @@ const _initialize = (server) => {
   // Listen for messages from users 
   server.post('/api/messages', connector.listen())
 
-  let config = {
-    //control when to enable LUIS
-    enableLUIS: false
-  }
-
   // Create your bot with a function to receive messages from the user
   const bot = new builder.UniversalBot(connector, (session, args) => {
 
     /**
      * Prevent open dialogs when LUIS is enabled
      */
-    if(!config.enableLUIS) {
+    if(!session.userData.luisEnabled) {
       session.beginDialog('/menu')
     }
   })
@@ -64,7 +59,7 @@ const _initialize = (server) => {
   //bot.set('persistConversationData', false)
 
   //Add dialogs
-  const menuDialog = dialogs.menu.init(builder, bot, config)
+  const menuDialog = dialogs.menu.init(builder, bot)
   const changeLanguageDialog = dialogs.changeLanguage.init(builder, bot)
   const requestInfoDialog = dialogs.requestInfo.init(builder, bot)
 
@@ -76,11 +71,11 @@ const _initialize = (server) => {
     'en': `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppIdEnglish}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`,
     'es': `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppIdSpanish}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`
   })
-  .onEnabled((context, callback) => {
+  .onEnabled((session, callback) => {
     //Prevent enable LUIS while the dialogs are running
-    //const enabled = context.dialogStack().length == 0
+    //const enabled = session.dialogStack().length == 0
 
-    const enabled = config.enableLUIS
+    const enabled = session.userData.luisEnabled
     log(chalk.green(`LUIS ENABLED: ${enabled}`))
     callback(null, enabled)
   })
@@ -98,7 +93,7 @@ const _initialize = (server) => {
   bot.customAction({
     matches: /exit/gi,
     onSelectAction: (session, args, next) => {
-      config.enableLUIS = false
+      session.userData.luisEnabled = false
       session.reset()
     }
   })

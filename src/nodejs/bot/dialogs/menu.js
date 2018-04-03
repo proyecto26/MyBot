@@ -1,19 +1,19 @@
-const _ = require('lodash');
+const _ = require('lodash')
 
-const menu = (builder, bot, config) => {
+const menu = (builder, bot) => {
 
   let menuOptions = []
 
   return bot.dialog('/menu', [
     (session, args, next) => {
-      config.enableLUIS = false;
+      session.userData.luisEnabled = false
       if(session.preferredLocale()) {
-        next();
+        next()
       }
       else {
-        session.send('greeting');
-        session.send('instructions');
-        session.beginDialog('/changeLanguage');
+        session.send('greeting')
+        session.send('instructions')
+        session.beginDialog('/changeLanguage')
       }
     },
     (session) => {
@@ -25,32 +25,32 @@ const menu = (builder, bot, config) => {
       ].map(option => ({ 
         key: option, 
         value: session.gettext(option) 
-      }));
-      const options = menuOptions.map(option => option.value);
+      }))
+      const options = menuOptions.map(option => option.value)
 
-      builder.Prompts.choice(session, 'select_demo', options, { listStyle: 3 });
+      builder.Prompts.choice(session, 'select_demo', options, { listStyle: 3 })
     },
     (session, results, next) => {
       const option = _.find(menuOptions, { value: results.response.entity })
       switch (option.key) {
         case 'request_info':
-          session.beginDialog('/requestInfo');
-          break;
+          session.beginDialog('/requestInfo')
+          break
         case 'enable_luis':
-          config.enableLUIS = true;
-          session.endDialog('luis_enabled');
-          break;
+          session.userData.luisEnabled = true
+          session.endDialog('luis_enabled')
+          break
         case 'change_language':
-          session.beginDialog('/changeLanguage');
-          break;
+          session.beginDialog('/changeLanguage')
+          break
         default:
-          session.send('must_select_option');
-          session.reset();
-          break;
+          session.send('must_select_option')
+          session.reset()
+          break
       }
     }
-  ]);
-};
+  ])
+}
   
 module.exports = {
   init: menu
