@@ -12,10 +12,10 @@ const microsoftAppId = process.env['MicrosoftAppId'] || localConf.MicrosoftAppId
 const microsoftAppPassword = process.env['MicrosoftAppPassword'] || localConf.MicrosoftAppPassword
 const azureWebJobsStorage = process.env['AzureWebJobsStorage'] || localConf.AzureWebJobsStorage
 
-const luisAppId = process.env['LuisAppId'] || localConf.LuisAppId
+const luisAppIdEnglish = process.env['LuisAppId_English'] || process.env['LuisAppId'] || localConf.LuisAppId_English
+const luisAppIdSpanish = process.env['LuisAppId_Spanish'] || localConf.LuisAppId_Spanish
 const luisAPIKey = process.env['LuisAPIKey'] || localConf.LuisAPIKey
 const luisAPIHostName = process.env['LuisAPIHostName'] || localConf.LuisAPIHostName
-const LuisModelUrl = `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppId}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`
 
 // Create chat connector for communicating with the Bot Framework Service
 const connector = new builder.ChatConnector({
@@ -42,6 +42,7 @@ const _initialize = (server) => {
   server.post('/api/messages', connector.listen())
 
   let config = {
+    //control when to enable LUIS
     enableLUIS: false
   }
 
@@ -70,7 +71,12 @@ const _initialize = (server) => {
   /**
    * LUIS Configuration
    */
-  const recognizer = new builder.LuisRecognizer(LuisModelUrl).onEnabled((context, callback) => {
+  const recognizer = new builder.LuisRecognizer({
+    //add a single model or model by language
+    'en': `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppIdEnglish}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`,
+    'es': `https://${luisAPIHostName}/luis/v2.0/apps/${luisAppIdSpanish}?subscription-key=${luisAPIKey}&verbose=true&timezoneOffset=0&q=`
+  })
+  .onEnabled((context, callback) => {
     //Prevent enable LUIS while the dialogs are running
     //const enabled = context.dialogStack().length == 0
 

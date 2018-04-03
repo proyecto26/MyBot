@@ -2,7 +2,8 @@
     "MicrosoftAppId": "c6831a49-9de5-445c-8d69-7d36ade8b1b2",
     "MicrosoftAppPassword" : "IH7*k$OjX5rV1i9l",
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=bot26storage;AccountKey=jpETR5jiFA3ZiNclK38/uckpK00zsFW+VJvWHU7gNyYp0bKppL7hUKjzsJlYmJVfhFSwaWy8ZF6RnVkJeYbNkQ==;",
-    "LuisAppId": "64defde4-ba25-4f83-a41d-eb1ce452e40e",
+    "LuisAppId_English": "64defde4-ba25-4f83-a41d-eb1ce452e40e",
+    "LuisAppId_Spanish": "6022d5aa-4d16-4a87-bdcd-df87b3a9620a",
     "LuisAPIKey": "e36aac94e6c54b7c83512820263d1b40",
     "LuisAPIHostName": "westus.api.cognitive.microsoft.com"
 }
