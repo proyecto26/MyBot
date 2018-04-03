@@ -2,7 +2,7 @@
 
 ## Templates
 
-- [NodeJS(Express) + Swagger + Localization](src/nodejs) ![Bot NodeJS](img/bot_nodejs.png)
+- [NodeJS(Express) + Swagger + Localization(Multi-Language)](src/nodejs) ![Bot NodeJS](img/bot_nodejs.png)
 
 ## Demo
 Do you want to see this template in action? Download the code and the following tools:
