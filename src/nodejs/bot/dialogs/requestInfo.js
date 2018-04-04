@@ -1,4 +1,6 @@
-const requestInfo = (builder, bot) => {
+const builder = require('botbuilder')
+
+const requestInfo = (bot) => {
   return bot.dialog('/requestInfo', [
     (session) => {
       builder.Prompts.text(session, "request_name");

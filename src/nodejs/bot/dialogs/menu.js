@@ -1,6 +1,7 @@
 const _ = require('lodash')
+const builder = require('botbuilder')
 
-const menu = (builder, bot) => {
+const menu = (bot) => {
 
   let menuOptions = []
 

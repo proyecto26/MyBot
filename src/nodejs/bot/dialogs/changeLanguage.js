@@ -1,6 +1,7 @@
 const _ = require('lodash')
+const builder = require('botbuilder')
 
-const changeLanguage = (builder, bot) => {
+const changeLanguage = (bot) => {
 
   const languagesSupported = [
     { key: 'en', value: 'English' },
