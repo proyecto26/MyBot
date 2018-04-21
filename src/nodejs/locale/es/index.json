@@ -28,5 +28,6 @@
   ],
   "enable_luis": "Habilitar LUIS",
   "luis_enabled": "LUIS habilitado, puedes saludar! (exit para deshabilitar)",
-  "dont_understand_you": "No te entiendo, qué?"
+  "dont_understand_you": "No te entiendo, qué quieres?",
+  "movie_selected": "El usuario quiere ver la película: %s"
 }

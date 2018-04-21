@@ -11,6 +11,8 @@ const luisAppIdSpanish = process.env['LuisAppId_Spanish'] || localConf.LuisAppId
 const luisAPIKey = process.env['LuisAPIKey'] || localConf.LuisAPIKey
 const luisAPIHostName = process.env['LuisAPIHostName'] || localConf.LuisAPIHostName
 
+const dialogs = require('require-all')(__dirname + '/dialogs')
+
 const _initialize = (bot) => {
   
   const recognizer = new builder.LuisRecognizer({
@@ -27,6 +29,9 @@ const _initialize = (bot) => {
     callback(null, enabled)
   })
   bot.recognizer(recognizer)
+
+  const movieBook = dialogs.movieBook.init(bot)
+  movieBook.triggerAction({ matches: 'MovieTickets.Book' })
 
   bot.dialog('/greeting', (session) => session.send('greetings'))
   .triggerAction({ matches: 'Greeting' })
