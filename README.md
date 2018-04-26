@@ -2,7 +2,7 @@
 
 ## Templates
 
-- [NodeJS(Express) + Swagger + Localization(Multi-Language)](src/nodejs) ![Bot NodeJS](img/bot_nodejs.png) The bot can be easily configured in any Express project by adding the [bot](src/nodejs/bot) folder and initializing it 🤘
+- [NodeJS(Express) + Swagger + Localization(Multi-Language)](src/nodejs) => https://bot26.azurewebsites.net ![Bot NodeJS](img/bot_nodejs.png) The bot can be easily configured in any Express project by adding the [bot](src/nodejs/bot) folder and initializing it 🤘
 
 ## Demo
 Do you want to see this template in action? Download the code and the following tools:
