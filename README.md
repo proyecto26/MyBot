@@ -7,7 +7,7 @@
 MyBot can be easily configured in any Express project by adding the [bot](src/nodejs/bot) folder, installing dependencies and initializing it 🤘
 
 ## Demo
-Do you want to see this template in action? Download the code and the following tools:
+Do you want to see this template in action? Download the code and install the following tools:
 - [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator)
 - [ngrok](https://ngrok.com/download) (Required to connect to a bot hosted remotely)
 
