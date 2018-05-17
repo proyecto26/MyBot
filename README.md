@@ -1,19 +1,23 @@
-# Bots
+<h1 align="center">
+  <img src="./img/mybot.png"/><br>
+  NodeJS(Express) + Swagger + Multi-Language
+</h1>
 
-## Templates
-
-- [NodeJS(Express) + Swagger + Localization(Multi-Language)](src/nodejs) => https://bot26.azurewebsites.net ![Bot NodeJS](img/bot_nodejs.png) The bot can be easily configured in any Express project by adding the [bot](src/nodejs/bot) folder and initializing it 🤘
+## Intro
+MyBot can be easily configured in any Express project by adding the [bot](src/nodejs/bot) folder, installing dependencies and initializing it 🤘
 
 ## Demo
 Do you want to see this template in action? Download the code and the following tools:
 - [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator)
 - [ngrok](https://ngrok.com/download) (Required to connect to a bot hosted remotely)
 
+![MyBot](img/bot_nodejs.png)
+
 More examples with **NodeJS**:
 - [BotBuilder](https://github.com/Microsoft/BotBuilder/tree/master/Node/examples)
 - [BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node)
 
-## History
+## Bots History
 - 1960: ELIZA
 - 1970: PARRY
 - 1980: Graphic interface
