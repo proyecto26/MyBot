@@ -3,11 +3,19 @@
   NodeJS(Express) + Swagger + Multi-Language
 </h1>
 
-## Intro
+## Intro ☕
 MyBot can be easily configured in any Express project by adding the [bot](src/nodejs/bot) folder, installing dependencies and initializing it 🤘
 
-## Demo
-Do you want to see this template in action? Download the code and install the following tools:
+## Installation ⏯
+Do you want to see this template in action? 💻
+- Download the code [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/proyecto26/MyBot/tree/master/src/nodejs)
+- To run the project execute the commands:
+```
+npm install
+npm start
+```
+
+And remember install the following tools to debug your bot locally:
 - [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator)
 - [ngrok](https://ngrok.com/download) (Required to connect to a bot hosted remotely)
 
@@ -17,7 +25,7 @@ More examples with **NodeJS**:
 - [BotBuilder](https://github.com/Microsoft/BotBuilder/tree/master/Node/examples)
 - [BotBuilder-Samples](https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node)
 
-## Bots History
+## Bots History 🌎
 - 1960: ELIZA
 - 1970: PARRY
 - 1980: Graphic interface
@@ -66,7 +74,7 @@ List the functions offered by the bot and describe a step by step for its execut
 
 ![Bot Lifecycle](img/bot_lifecycle.png)
 
-# Bot Framework
+# Bot Framework 🤖
 Open Source Framework to create and connect bots (Cross channel, AI and Up-to-Date resources).
 ![Bot Framework](img/bot_framework.png)
 
@@ -84,10 +92,10 @@ SDKs for .NET, NodeJS or we can use REST APIs to create and debug bots. It also 
 Integrate external services and Manage the conversation using [LUIS](https://www.luis.ai/welcome) (Language Understanding Intelligent Service). 
 
 
-# Microsoft Cognitive Services
+# Microsoft Cognitive Services 🌐
 Set of APIs to create smart applications.
 
-## Vision
+## Vision 👀
 Image-processing algorithms to smartly identify, caption and moderate your pictures.
 - Computer Vision (Images)
 - Emotion
@@ -95,14 +103,14 @@ Image-processing algorithms to smartly identify, caption and moderate your pictu
 - Face
 - Video
 
-## Speech
+## Speech 💬
 Convert spoken audio into text, use voice for verification, or add speaker recognition to your app.
 - Custom Speech Service (CRIS)
 - Speaker Recognition
 - Speech
 - Translator
 
-## Language
+## Language 🤝
 Allow your apps to process natural language with pre-built scripts, evaluate sentiment and learn how to recognize what users want.
 - Bing Spell Check
 - Language Understanding
@@ -110,7 +118,7 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 - Text Analytics
 - Web Language Model
 
-### Videos
+### Videos 📹
 
 * [Introduction to LUIS](https://aka.ms/luis-intro-video)
 * [Advanced learning with LUIS](https://www.youtube.com/watch?v=39L0Gv2EcSk)
@@ -130,7 +138,7 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 - [Publish your trained app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/publishapp)
 - [LUIS Samples](https://github.com/Microsoft/LUIS-Samples)
 
-## Knowledge
+## Knowledge 📖
 Map complex information and data in order to solve tasks such as intelligent recommendations and semantic search.
 - Academic Knowledge
 - Entity Linking
@@ -138,7 +146,7 @@ Map complex information and data in order to solve tasks such as intelligent rec
 - Recommendations
 - QnA Maker
 
-## Search
+## Search 🔎
 Add Bing Search APIs to your apps and harness the ability to comb billions of webpages, images, videos, and news with a single API call.
 - Bing Autosuggest
 - Bing Image Search
@@ -146,11 +154,7 @@ Add Bing Search APIs to your apps and harness the ability to comb billions of we
 - Bing Video Search
 - Bing Web Search
 
-## Installation
-- NodeJS via npm: `botbuilder`
-- .NET via Nuget package: `Microsoft.Bot.Builder`
-
-# [QnA Maker](https://qnamaker.ai/)
+# [QnA Maker](https://qnamaker.ai/) 👷
 A free and easy-to-use REST API based on artificial intelligence to respond to users' questions in a natural way through an optimized learning logic (Machine Learning). It is a question and answer service with a graphical interface that allows it to be easy to administer.
 
 
@@ -220,7 +224,7 @@ public class QnADialogWithActiveLearning : QnAMakerDialog
 }
 ```
 
-# Channels
+# Channels 
 A channel is a connection between Bot Framework and communication applications.
 
 ## Publish
