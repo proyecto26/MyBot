@@ -5,6 +5,9 @@
 
 ## Intro ☕
 MyBot can be easily configured in any Express project by adding the [bot](src/nodejs/bot) folder, installing dependencies and initializing it 🤘
+### Presentations: 
+  - [Bot Framework](https://slides.com/juandavidnicholls/bot-framework)
+  - [My first Multi-language Bot!](https://slides.com/juandavidnicholls/my-bot)
 
 ## Installation ⏯
 Do you want to see this template in action? 💻
