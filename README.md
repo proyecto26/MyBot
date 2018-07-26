@@ -127,7 +127,7 @@ Allow your apps to process natural language with pre-built scripts, evaluate sen
 * [Advanced learning with LUIS](https://www.youtube.com/watch?v=39L0Gv2EcSk)
 * [Channel 9 Deep Dive into LUIS and Chatbots](https://channel9.msdn.com/Blogs/MVP-Azure/Cognitive-Services-Episode-3-Deep-dive-into-LUIS-and-Chatbots)
 
-### To Do
+### To Learn
 - [Plan your LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/plan-your-app)
 - [Use prebuilt domains in LUIS apps](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-how-to-use-prebuilt-domains)
 - [Create your first LUIS app](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-get-started-create-app)
