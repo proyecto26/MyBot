@@ -36,7 +36,7 @@ More examples with **NodeJS**:
 - 2000: Social/App stores
 - 2010: Bots and agents, human Interaction/Experience
 
-## Type of Chatbots
+## Chatbots types
 - **Utilities:** It fulfills a function for the users and is measured according to the effectiveness of the answers.
 - **Social:** Success is measured according to the duration and level of user satisfaction, it is also possible to assess the level of satisfaction through APIs to recognize the level of emotion of users.
 - **Assistants (Cortana, Siri, etc):** Acts as a facilitator, usually comes integrated with the Operating System. Main features:
