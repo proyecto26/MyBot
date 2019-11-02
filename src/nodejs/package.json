@@ -16,7 +16,7 @@
     "express": "~4.15.2",
     "jade": "~1.11.0",
     "lodash": "^4.17.5",
-    "morgan": "~1.8.1",
+    "morgan": "~1.9.1",
     "require-all": "^2.2.0",
     "serve-favicon": "~2.4.2",
     "swagger-ui-express": "^3.0.6",
