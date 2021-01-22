@@ -246,17 +246,25 @@ A channel is a connection between Bot Framework and communication applications.
 - [Microsoft labs for learning to develop AI-oriented applications](https://azure.github.io/LearnAI-Bootcamp/)
 - [Microsoft Bot Framework Resources](https://blogs.msdn.microsoft.com/smich/2016/09/30/microsoft-bot-framework-resources/)
 
+## Credits 👍
+- **[TI Capacitación](https://ticapacitacion.com)**
+
+## Contributing ✨
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.  
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated** ❤️.  
+You can learn more about how you can contribute to this project in the [contribution guide](https://github.com/proyecto26/MyBot/blob/master/CONTRIBUTING.md).
+
 ## Collaborators 🥇
 [<img alt="jdnichollsc" src="https://avatars3.githubusercontent.com/u/2154886?v=3&s=117" width="117">](https://github.com/jdnichollsc) |
 :---: |
 [Juan Nicholls](mailto:jdnichollsc@hotmail.com) |
 
-## Credits 👍
-- **[TI Capacitación](https://ticapacitacion.com)**
-
 ## Supporting 🍻
 I believe in Unicorns 🦄
 Support [me](http://www.paypal.me/jdnichollsc/2), if you do too.
+
+## License ⚖️
+This repository is available under the [MIT License](https://github.com/proyecto26/MyBot/blob/master/LICENSE).
 
 ## Happy coding 💯
 Made with ❤️
